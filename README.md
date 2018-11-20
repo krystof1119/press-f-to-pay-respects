@@ -8,8 +8,9 @@ My first ever Electron app. Big F.
 Just clone the repo, actually.
 
 **Preparation for building**<br>
+Install dependencies for getting `robotjs`. For me, it meant installing `windows-build-tools` and `node-gyp` globally. Following instructions on https://github.com/octalmage/robotjs#building<br>
 Run `npm i` or a yarn equivalent if you have one.<br>
-Make sure you have a recent-ish version of Java. This might need it. Or not, depends whether I've refactored the code yet.
+_This used to require Java. It **no longer does.**_
 
 **Running the code**<br>
 Use `npm start` or `electron-forge start`. The first one just uses the second one.
