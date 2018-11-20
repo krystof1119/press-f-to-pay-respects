@@ -2,15 +2,12 @@ import React from 'react';
 
 import ReactDOM from 'react-dom';
 
-var ks = require('node-key-sender');
+import styles from './libraries/styles';
 
-class Slider extends React.Component {
-  render() {
-    return (
-      <input type="range" min={0} max={100} onChange={this.props.changeHandler} />
-    );
-  }
-}
+import Slider from './components/slider';
+
+const rj = require('robotjs');
+
 
 class FullDiv extends React.Component {
   constructor(props) {
@@ -24,35 +21,57 @@ class FullDiv extends React.Component {
   doFPress(thisRef) {
     const fstr = thisRef.state.fMessage + 'f';
     thisRef.setState({fMessage: fstr});
-    for (let i = 0; i <= 100 - thisRef.state.quantity; i++) {
-      setTimeout(this.pressF(), i * thisRef.state.quality);
+    for (let i = 0; i <= (100 - thisRef.state.quantity); i++) {
+      setTimeout(this.pressF, i * thisRef.state.quality);
     }
   }
   pressF() {
-    ks.sendKey("f"); // TODO: This fails spectacularly. Fix it.
+    rj.keyTap('f');
   }
   render() {
     return (
       <div>
-        F Quality:
-        <Slider
-          label="quality"
-          changeHandler={(e) => this.setState({quality: parseInt(e.target.value)})} />
-        {this.state.quality}
+        <table>
+        <tbody>
+          <tr>
+            <td>
+              F Quality:
+            </td>
+            <td style={styles.columns['2']}>
+              <Slider
+                label="quality"
+                changeHandler={ (e) => this.setState({quality: parseInt(e.target.value, 10) })}
+              />
+            </td>
+            <td>
+              {this.state.quality}
+            </td>
+          </tr>
+          <tr>
+            <td>
+              F Quantity:
+            </td>
+            <td style={styles.columns['2']}>
+              <Slider
+                label="quantity"
+                changeHandler={ (e) => this.setState({quantity: parseInt(e.target.value, 10) })}
+              />
+            </td>
+            <td>
+              {this.state.quantity}
+            </td>
+          </tr>
+        </tbody>
+        </table>
         <br />
-        F Quantity:
-        <Slider
-          label="quantity"
-          changeHandler={(e) => this.setState({quantity: parseInt(e.target.value)})} />
-        {this.state.quantity}
-        <br />
-        <button onClick={() => this.doFPress(this)}>Press F</button>
+        <button onClick={() => this.doFPress(this)} style={styles.button}>Press F</button>
         <br />
         {this.state.fMessage}
       </div>
     );
   }
 }
+
 
 const reactdiv = document.getElementById('reactdiv');
 ReactDOM.render(React.createElement(FullDiv), reactdiv);
