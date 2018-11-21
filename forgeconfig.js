@@ -27,7 +27,7 @@ module.exports = {
     packageManager: 'npm',
   },
   electronWinstallerConfig: {
-    name: 'press_f_to_pay_respects',
+    name: 'Press F to pay respects.',
   },
   electronInstallerDebian: {},
   electronInstallerRedhat: {},
@@ -36,8 +36,8 @@ module.exports = {
     name: '',
   },
   windowsStoreConfig: {
-    packageName: '',
-    name: 'pressftopayrespects',
+    packageName: 'cz.krystof1119.f',
+    name: 'Press F to pay respects.',
   },
   hooks: {
     generateAssets: async () => {
