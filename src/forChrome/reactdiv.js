@@ -13,8 +13,8 @@ class FullDiv extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      quantity: 125,
-      quality: 75,
+      quantity: 75,
+      quality: 125,
       fMessage: 'AKA The F machine: ',
     };
   }
