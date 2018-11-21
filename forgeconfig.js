@@ -7,13 +7,20 @@ module.exports = {
   make_targets: {
     win32: [
       'squirrel',
+      'appx',
+      'wix',
+      'zip',
     ],
     darwin: [
       'zip',
+      'dmg',
     ],
     linux: [
+      'zip',
       'deb',
       'rpm',
+      'flatpak',
+      'snap',
     ],
   },
   electronPackagerConfig: {
