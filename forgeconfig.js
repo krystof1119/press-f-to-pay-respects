@@ -7,7 +7,6 @@ module.exports = {
   make_targets: {
     win32: [
       'squirrel',
-      'appx',
       'wix',
       'zip',
     ],
@@ -27,7 +26,7 @@ module.exports = {
     packageManager: 'npm',
   },
   electronWinstallerConfig: {
-    name: 'Press F to pay respects.',
+    name: 'press-f-to-pay-respects',
   },
   electronInstallerDebian: {},
   electronInstallerRedhat: {},
