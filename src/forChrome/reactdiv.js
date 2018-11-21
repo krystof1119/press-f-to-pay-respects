@@ -21,7 +21,7 @@ class FullDiv extends React.Component {
   doFPress(thisRef) {
     const fstr = thisRef.state.fMessage + 'f';
     thisRef.setState({fMessage: fstr});
-    for (let i = 0; i <= (100 - thisRef.state.quantity); i++) {
+    for (let i = 0; i <= thisRef.state.quantity; i++) {
       setTimeout(this.pressF, i * thisRef.state.quality);
     }
   }
