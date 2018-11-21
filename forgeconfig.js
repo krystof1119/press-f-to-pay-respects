@@ -7,7 +7,6 @@ module.exports = {
   make_targets: {
     win32: [
       'squirrel',
-      'wix',
       'zip',
     ],
     darwin: [
