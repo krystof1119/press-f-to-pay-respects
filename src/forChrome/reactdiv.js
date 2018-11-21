@@ -13,9 +13,9 @@ class FullDiv extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      quantity: 50,
-      quality: 50,
-      fMessage: '',
+      quantity: 125,
+      quality: 75,
+      fMessage: 'AKA The F machine: ',
     };
   }
   doFPress(thisRef) {
@@ -41,6 +41,9 @@ class FullDiv extends React.Component {
               <Slider
                 label="quality"
                 changeHandler={ (e) => this.setState({quality: parseInt(e.target.value, 10) })}
+                min={0}
+                max={250}
+                defaultVal={125}
               />
             </td>
             <td>
@@ -55,6 +58,9 @@ class FullDiv extends React.Component {
               <Slider
                 label="quantity"
                 changeHandler={ (e) => this.setState({quantity: parseInt(e.target.value, 10) })}
+                min={1}
+                max={150}
+                defaultVal={75}
               />
             </td>
             <td>

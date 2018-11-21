@@ -2,13 +2,14 @@ import React from 'react';
 
 import styles from '../libraries/styles.js';
 
-const Slider = ({ changeHandler }) => (
+const Slider = ({ changeHandler, min, max, defaultVal }) => (
   <input
     type="range"
-    min={0}
-    max={100}
+    min={min}
+    max={max}
+    defaultValue={defaultVal}
     onChange={changeHandler}
     style={styles.slider} />
-);// TODO: Variable min,max,defaultValue
+);
 
 export default Slider;
