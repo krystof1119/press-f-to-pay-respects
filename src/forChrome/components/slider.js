@@ -9,6 +9,6 @@ const Slider = ({ changeHandler }) => (
     max={100}
     onChange={changeHandler}
     style={styles.slider} />
-);
+);// TODO: Variable min,max,defaultValue
 
 export default Slider;
