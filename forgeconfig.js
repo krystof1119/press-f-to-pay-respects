@@ -1,3 +1,8 @@
+const rollup = require('rollup');
+const babel = require('@babel/core');
+const fs = require('fs');
+const requireFromString = require('require-from-string');
+
 module.exports = {
   make_targets: {
     win32: [
@@ -29,7 +34,16 @@ module.exports = {
   },
   hooks: {
     generateAssets: async () => {
-      console.log('test');
+/*      return new Promise(function (resolve) {
+        resolve(rollup.rollup());
+      }); */
+      // babel.transform(await , { presets: ['@babel/preset-env'] }).code
+      console.log('Bundling Babel JavaScript, please wait...');
+      const rollupConfig = requireFromString(babel.transform(
+        fs.readFileSync('rollup.config.js'),
+        { presets: ['@babel/preset-env'] }).code);
+      const bundle = await rollup.rollup(rollupConfig.default);
+      await bundle.write(rollupConfig.default.output);
     },
   },
 
