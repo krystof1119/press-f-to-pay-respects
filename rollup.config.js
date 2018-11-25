@@ -3,7 +3,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 
 export default {
-  input: 'src/forChrome/reactdiv.js',
+  input: 'src/forChrome/reactdiv.jsx',
   output: {
     format: 'iife',
     file: 'gen/chromeBabeled.js',
