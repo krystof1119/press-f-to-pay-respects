@@ -4,6 +4,10 @@ FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF (No, intelliJ, this is no
 
 My first ever Electron app. Big F.
 
+
+**What it does**<br>
+It presses F. That's its purpose. You set the F quantity and quality and it presses F. That's literally it.
+
 **Collection**<br>
 Just clone the repo, actually.
 
